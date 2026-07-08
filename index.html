@@ -39,7 +39,7 @@
     }
 
     /* keep the couple and the sand in frame, crop the empty sky */
-    .panel.proposal img { object-position: center 85%; }
+    .panel.proposal img { object-position: center bottom; }
     .panel.ring img { object-position: center 35%; }
 
     /* soft dark wash so the white type always reads */
@@ -50,10 +50,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      padding-top: 9vh;
       text-align: center;
       color: #fff;
-      padding: 2rem;
     }
 
     .names {
@@ -96,8 +96,10 @@
     /* stack on mobile: photos vertical, text anchored in the sky at the top */
     @media (max-width: 700px) {
       .photos { flex-direction: column; }
-      .overlay { justify-content: flex-start; padding-top: 10vh; }
+      .overlay { padding-top: 10vh; }
       .rule { margin: 1.25rem 0; }
+      /* slight upward bias keeps the sand at the panel break */
+      .panel.proposal img { object-position: center 85%; }
     }
   </style>
 </head>
