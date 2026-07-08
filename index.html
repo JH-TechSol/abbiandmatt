@@ -38,6 +38,10 @@
       display: block;
     }
 
+    /* keep the couple and the sand in frame, crop the empty sky */
+    .panel.proposal img { object-position: center 85%; }
+    .panel.ring img { object-position: center 35%; }
+
     /* soft dark wash so the white type always reads */
     .overlay {
       position: fixed;
@@ -90,16 +94,18 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* stack on mobile */
+    /* stack on mobile: photos vertical, text anchored in the sky at the top */
     @media (max-width: 700px) {
       .photos { flex-direction: column; }
+      .overlay { justify-content: flex-start; padding-top: 10vh; }
+      .rule { margin: 1.25rem 0; }
     }
   </style>
 </head>
 <body>
   <div class="photos">
-    <div class="panel"><img src="images/proposal.jpg" alt="Matt proposing to Abbi on the beach"></div>
-    <div class="panel"><img src="images/ring.jpg" alt="Abbi and Matt celebrating with the ring"></div>
+    <div class="panel proposal"><img src="images/proposal.jpg" alt="Matt proposing to Abbi on the beach"></div>
+    <div class="panel ring"><img src="images/ring.jpg" alt="Abbi and Matt celebrating with the ring"></div>
   </div>
   <div class="overlay">
     <h1 class="names">Abbi <span class="amp">&amp;</span> Matt</h1>
